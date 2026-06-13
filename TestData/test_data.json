@@ -1,0 +1,18 @@
+{
+  "data" : [
+    {
+    "username": "standard_user",
+      "password" : "secret_sauce",
+      "firstname" : "Sarvesh",
+      "lastname" : "Bagwe",
+      "postalcode" : "411028"
+    },
+    {
+    "username": "visual_user",
+      "password" : "secret_sauce",
+      "firstname" : "Peter",
+      "lastname" : "Bhartiya",
+      "postalcode" : "411036"
+    }
+  ]
+}
