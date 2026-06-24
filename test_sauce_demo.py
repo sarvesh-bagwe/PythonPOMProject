@@ -26,7 +26,7 @@ class TestSauceDemo:
         login = LoginPage(driver)
         login.login(data_list["username"], data_list["password"])
 
-        driver.get_screenshot_as_file('name.png') # take screenshot
+        driver.get_screenshot_as_file('product_page.jpg') # take screenshot
         logger.info("Login Successful")
 
         products = ProductPage(driver)
