@@ -44,81 +44,114 @@
 #
 # print(max)
 
-from faker import Faker
+# from faker import Faker
+#
+# fake = Faker()
+#
+# fake.passport_number()
+# print(fake.items())
+#
+#
+# food_items = {
+#             'fruits': {
+#                 'tropical': {
+#                     'mango': {
+#                         'color': 'orange',
+#                         'taste': 'sweet',
+#                         'nutrients': ['vitamin C', 'vitamin A', 'fiber']
+#                     },
+#                     'pineapple': {
+#                         'color': 'yellow',
+#                         'taste': 'tangy',
+#                         'nutrients': ['vitamin C', 'manganese', 'fiber']
+#                     }
+#                 },
+#                 'temperate': {
+#                     'apple': {
+#                         'color': 'red',
+#                         'taste': 'sweet',
+#                         'nutrients': ['vitamin C', 'fiber', 'potassium']
+#                     },
+#                     'pear': {
+#                         'color': 'green',
+#                         'taste': 'juicy',
+#                         'nutrients': ['vitamin C', 'fiber', 'copper']
+#                     }
+#                 }
+#             },
+#             'vegetables': {
+#                 'leafy': {
+#                     'spinach': {
+#                         'color': 'green',
+#                         'taste': 'earthy',
+#                         'nutrients': ['vitamin K', 'vitamin A', 'iron']
+#                     },
+#                     'kale': {
+#                         'color': 'green',
+#                         'taste': 'bitter',
+#                         'nutrients': ['vitamin K', 'vitamin A', 'calcium']
+#                     }
+#                 },
+#                 'root': {
+#                     'carrot': {
+#                         'color': 'orange',
+#                         'taste': 'sweet',
+#                         'nutrients': ['vitamin A', 'vitamin K', 'fiber']
+#                     },
+#                     'beet': {
+#                         'color': 'red',
+#                         'taste': 'earthy',
+#                         'nutrients': ['vitamin C', 'folate', 'iron']
+#                     }
+#                 }
+#             }
+#         }
+#
+#
+# def traverse(d, col):
+#
+#     if isinstance(d, dict):
+#         for key, value in d.items():
+#             # print(key)
+#             if isinstance(value, dict):
+#                 if "color" in value and value["color"] == col and "taste" in value:
+#                     print(f"{key} is {value["taste"]}")
+#                 else:
+#                     traverse(value, col)
+#
+#
+# traverse(food_items, 'red')
 
-fake = Faker()
 
-fake.passport_number()
-print(fake.items())
+# s = ['s','a','r']
+#
+# print ("".join(s))
+#
+# sorted(s, reverse=True)
+#
+# print("abc"[::-1])
 
+def convert(s: str, numRows: int) -> str:
+    if s != '':
 
-food_items = {
-            'fruits': {
-                'tropical': {
-                    'mango': {
-                        'color': 'orange',
-                        'taste': 'sweet',
-                        'nutrients': ['vitamin C', 'vitamin A', 'fiber']
-                    },
-                    'pineapple': {
-                        'color': 'yellow',
-                        'taste': 'tangy',
-                        'nutrients': ['vitamin C', 'manganese', 'fiber']
-                    }
-                },
-                'temperate': {
-                    'apple': {
-                        'color': 'red',
-                        'taste': 'sweet',
-                        'nutrients': ['vitamin C', 'fiber', 'potassium']
-                    },
-                    'pear': {
-                        'color': 'green',
-                        'taste': 'juicy',
-                        'nutrients': ['vitamin C', 'fiber', 'copper']
-                    }
-                }
-            },
-            'vegetables': {
-                'leafy': {
-                    'spinach': {
-                        'color': 'green',
-                        'taste': 'earthy',
-                        'nutrients': ['vitamin K', 'vitamin A', 'iron']
-                    },
-                    'kale': {
-                        'color': 'green',
-                        'taste': 'bitter',
-                        'nutrients': ['vitamin K', 'vitamin A', 'calcium']
-                    }
-                },
-                'root': {
-                    'carrot': {
-                        'color': 'orange',
-                        'taste': 'sweet',
-                        'nutrients': ['vitamin A', 'vitamin K', 'fiber']
-                    },
-                    'beet': {
-                        'color': 'red',
-                        'taste': 'earthy',
-                        'nutrients': ['vitamin C', 'folate', 'iron']
-                    }
-                }
-            }
-        }
+        zigzag_list = list()
 
+        counter = 0
+        col = 0
+        for i in range(numRows):
+            if counter != len(s):
+                print(i, col, counter)
+                if i == numRows - 1:
+                    zigzag_list[i][col] = s[counter]
 
-def traverse(d, col):
-
-    if isinstance(d, dict):
-        for key, value in d.items():
-            # print(key)
-            if isinstance(value, dict):
-                if "color" in value and value["color"] == col and "taste" in value:
-                    print(f"{key} is {value["taste"]}")
+                    i = 0
+                    col += 1
                 else:
-                    traverse(value, col)
+                    zigzag_list[i][col] = s[counter]
+                    counter += 1
+            else:
+                break
 
+        print(zigzag_list)
 
-traverse(food_items, 'red')
-
+convert("PAYPALISHIRING", 4)
